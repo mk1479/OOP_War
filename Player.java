@@ -37,7 +37,7 @@ public abstract class Player{
 		return this.roundsWon;
 	}
 
-	public setPlace(int p){
+	public void setPlace(int p){
 		this.place = p;
 	}
 	
