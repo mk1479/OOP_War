@@ -18,14 +18,15 @@ public abstract class Deck{
 		deck = new ArrayList<Card>(n);
 	}
 
+	//line 28?
 	public void shuffle() {
 		Random randomGen = new Random();
 
-      		for (int i = deck.length - 1; i > 0; i--) {
+      		for (int i = deck.size() - 1; i > 0; i--) {
          		int j = randomGen.nextInt(i + 1);
-         		Card tmpCard = deck[j];
-         		deck[j] = deck[i];
-         		deck[i] = tmpCard;
+         		Card tmpCard = deck.get(j);
+         		deck[j] = deck.get(i);
+         		tmpCard = deck.get(i);
       		}
 	}
 
