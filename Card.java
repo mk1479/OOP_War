@@ -9,6 +9,7 @@ public abstract class Card{
 	protected String suit;
 	protected int rank;
 	protected String fvalue;
+	protected int val; //just added this, idk what for though but there was no "val" for the generic constructor (line 17) -Jack
 	protected String color; //Changed from char to string to keep it modular
 
 
