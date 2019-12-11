@@ -5,10 +5,10 @@
 
 public abstract class Player{
 
-	String name;
-	Deck deck;
-	int place;
-	int roundsWon;
+	protected String name;
+	protected Deck deck;
+	protected int place;
+	protected int roundsWon;
 
 	public Player(String pName, Deck pDeck){
 		name = pName;
@@ -16,8 +16,8 @@ public abstract class Player{
 		roundsWon = place = 0;
 	}
 	
-	public void addCards(Card[] c){
-		for(int i = 0; i < c.length; i++)
+	public void addCards(ArrayList<Card> c){
+		for(int i = 0; i < c.size(); i++)
 			(this.deck).add(c[i]);
 	}
 
