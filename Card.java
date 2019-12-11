@@ -1,4 +1,4 @@
-/** ADD A COMPARISON CLASS TO COMPARE CARDS
+/** ADD A COMPARISON CLASS TO COMPARE CARDS <- moved to Deck class
 * ADD A LIST OF THE RANKS OF VALUES USING A MAP?? - 
 * potentially easier than the try catch but maybe not necessary??
 * ADD A TOSTRING METHOD TO PRINT CARD - maybe not bc all strings, use get methods
@@ -9,7 +9,6 @@ public abstract class Card{
 	protected String suit;
 	protected int rank;
 	protected String fvalue;
-	protected int val; //just added this, idk what for though but there was no "val" for the generic constructor (line 17) -Jack
 	protected String color; //Changed from char to string to keep it modular
 
 
@@ -52,18 +51,5 @@ public abstract class Card{
 		return this.rank;
 	}
 
-	//Compares cards and returns index of card that has highest value (ie rank)
-	public int compareCards(Card[] c) {
-		int maxIndex = 0;
-		int maxRank = 0;
-		for(int i = 0; i < c.length; i++){
-			int tempRank = (c[i]).getRank();
-			if(tempRank > maxRank) {
-				maxIndex = i;
-				maxRank = tempRank;
-			}
-		}
-		return maxIndex;
-	}
 
 }
