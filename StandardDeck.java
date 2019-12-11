@@ -1,3 +1,4 @@
+//CAN MOVE SPLITDECK INTO DECK IF WANT - might make more sense?
 
 public abstract class StandardDeck extends Deck{
 
