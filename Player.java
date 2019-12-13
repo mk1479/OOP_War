@@ -1,19 +1,13 @@
 
-
-//import java.util.ArrayList;
-
-
 public class Player{
 
 	protected String name;
 	protected Deck deck;
 	protected int place;
-	//protected int roundsWon;
 
 	public Player(String pName, Deck pDeck){
 		name = pName;
 		deck = pDeck;
-		//roundsWon = place = 0;
 	}
 	
 	//CHECK IF ARRAYLIST OR DECK AS PARAMETER
@@ -41,14 +35,6 @@ public class Player{
 	public int getDSize() {
 		return deck.getSize();
 	}
-
-	/*public void incRoundsWon(){
-		roundsWon++;
-	}
-
-	public int getRoundsWon(){
-		return this.roundsWon;
-	}*/
 
 	public void setPlace(int p){
 		this.place = p;
