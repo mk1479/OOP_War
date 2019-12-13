@@ -5,8 +5,6 @@ import java.util.Scanner;
 import java.util.*;
 import java.io.*;
 
-//CAN MOVE SPLITDECK INTO DECK IF WANT - might make more sense?
-
 public class StandardDeck extends Deck{
 
 
@@ -38,18 +36,8 @@ public class StandardDeck extends Deck{
 	}
 
 	public void setFaces(File input) {
-		//Do this shit
-		//IDEA: constructor takes file and sets faces at beginning??
+		//placehlder
 	}
 
-	/*
-	public Deck splitDeck(int s, int f){
-		Deck sub = new Deck();
-		//CHECK THAT i < f
-		for(int i = s; i <= f; i++){
-			sub.add(this.(deck.get(i)));
-		}
-		return sub;
-	}*/
 
 }
