@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 public class Deck{
 
-	//CHANGED THE VARIABLES - SIZE NOT NEEDED
 	protected ArrayList<Card> deck;
 
 
@@ -51,14 +50,11 @@ public class Deck{
 	}
 
 	//Compares cards and returns index of card that has highest value (ie rank)
-	//FIXED: in case of =???
 	public int compareCards() {
 		int maxIndex = 0;
 		int maxRank = (deck.get(0)).getRank();
-		//System.out.println(maxRank);
 		for(int i = 1; i < deck.size(); i++){
 			int tempRank = (deck.get(i)).getRank();
-			//System.out.println(tempRank);
 			if(tempRank > maxRank) {
 				maxIndex = i;
 				maxRank = tempRank;
@@ -73,9 +69,7 @@ public class Deck{
 	}
 	
 	public Deck splitDeck(int s, int f){
-		//ArrayList<Card> sub = new ArrayList<Card>();
 		Deck sub = new Deck();
-		//CHECK THAT i < f
 		for(int i = s; i <= f; i++){
 			sub.add(deck.get(i));
 		}
@@ -85,14 +79,6 @@ public class Deck{
 	public void clearDeck() {
 		deck.clear();
 	}
-	
-	/*public String displayDeck() {
-		String visualDeck = "";
-		for(int i = 0; i <deck.size(); i++) {
-			visualDeck += "Player " + (i+1) ": " + 
-		}
-		
-		return visualDeck;
-	}*/
+
 
 }
