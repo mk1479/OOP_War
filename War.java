@@ -19,12 +19,11 @@ import java.lang.Math;
 public class War{
 	protected int players;
 	protected Deck deckPlayed = new Deck();
-	protected StandardDeck playingDeck = new StandardDeck("/Users/seanzy/Desktop/deck.csv"); 
-	//Might have to change this depending on how to initialize a new standard deck w/ file
+	protected StandardDeck playingDeck = new StandardDeck("/Users/henryschmeding/Desktop/deck.csv"); 
 	protected ArrayList<Player> currentPlayers = new ArrayList<Player>();
 	protected ArrayList<Player> finalRank = new ArrayList<Player>();
 
-	//Needs a constructor!
+
 	public War(){
 		//prompt for number of players and add players
 		players = start();
@@ -71,18 +70,6 @@ public class War{
 		}
 	}
 
-	// DONT NEED THIS
-	//Adds player to player list and current player list
-	//Can this prompt for player info?
-	//Should this take a parameter?
-	/*public void addPlayer(Player p){
-		currentPlayers.add(p);
-		allPlayers.add(p);
-		*/
-	
-	// Removes a player from the current player list
-	// Must also set place for that player
-	//Should this take a parameter?!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	public void removePlayer(Player p){
 		currentPlayers.remove(p);
 		p.setPlace(players);
@@ -90,9 +77,6 @@ public class War{
 		finalRank.add(0,p);
 	}
 
-	//Checks if there's. winner of the game yet
-	//Is this needed? 
-	//Can we use this to check winner and print all the players w/ their rank?!!!!!!!!!!!!!!!!!!
 	public void checkLost(){
 		int maxPlayers = currentPlayers.size();
 		ArrayList<Integer> toRemove = new ArrayList<Integer>();
@@ -116,7 +100,6 @@ public class War{
 		}
 		
 		int rWinner = deckPlayed.compareCards();
-		//System.out.println(deckPlayed.getSize());
 		
 		//If there's a tie
 		while(rWinner < 0) {
@@ -129,8 +112,6 @@ public class War{
 		System.out.println("Winner of this round is " + (currentPlayers.get(rWinner)).getName() + "\n");
 		
 		promptEnterKey();
-		
-		//Needs to print out all cards played and winner of round!!!
 		
 		deckPlayed.clearDeck();
 		checkLost();
@@ -163,8 +144,6 @@ public class War{
 	//In case of tie! (ie compareCards = -1)
 	//Each player plays 2 cards and only flips over the 2nd card
 	//returns the index of new winner and goes back to continue playing
-	//should return an int??
-	//should take in ????
 	public int iDeclareWar(int c){
 		System.out.println("---I DECLARE WAR---");
 		ArrayList<Integer> ptp = new ArrayList<Integer>();
@@ -199,7 +178,6 @@ public class War{
 		//Play new cards to compare
 		Deck idwDeck = new Deck();
 		for(int p = 0; p <ptp.size(); p++) {
-			//deckPlayed.add((currentPlayers.get(p)).playCard());
 			idwDeck.add((currentPlayers.get(ptp.get(p))).playCard());
 			System.out.println((currentPlayers.get(ptp.get(p))).getName() + ": " + (idwDeck.getCard(p)).toString() + "\n");
 		}
@@ -270,10 +248,10 @@ public class War{
 				System.out.print("\nDo you want to play again? (Enter 0 for yes, 1 for no) ");
 				enteredString = myScanner.next();  //Read into a string
 				enteredNumber = Integer.parseInt(enteredString.trim());  //then cast as a integer
-				numberError = false;  //if we haven't bailed out, then the number must be valid.
+				numberError = false;
 			} catch(Exception e) {
 				System.out.println("Invalid response. Answer 0 for yes or 1 for no.");
-				numberError = true;  //Uh-Oh...We have a problem.
+				numberError = true;
 			}
 
 		} while (numberError == true );  //Keep asking the user until the correct number is entered.
@@ -292,10 +270,10 @@ public class War{
 			try {
 				System.out.print("What is Player " + playerNum + "'s name?");
 				enteredString = myScanner.next();  //Read into a string
-				numberError = false;  //if we haven't bailed out, then the number must be valid.
+				numberError = false;.
 			} catch(Exception e) {
 				System.out.println("Your entry: \"" + enteredString + "\" is invalid...Please try again");
-				numberError = true;  //Uh-Oh...We have a problem.
+				numberError = true;
 			}
 
 		} while (numberError == true );  //Keep asking the user until the correct answer is entered.
@@ -318,10 +296,10 @@ public class War{
 				System.out.print("Welcome to the game of War! How many players will be participating this round? (2 or 4 only)");
 				enteredString = myScanner.next();  //Read into a string
 				enteredNumber = Integer.parseInt(enteredString.trim());  //then cast as a integer
-				numberError = false;  //if we haven't bailed out, then the number must be valid.
+				numberError = false;
 			} catch(Exception e) {
 				System.out.println("Invalid response. Answer 0 for yes or 1 for no.");
-				numberError = true;  //Uh-Oh...We have a problem.
+				numberError = true;
 			}
 
 		} while (numberError == true );  //Keep asking the user until the correct number is entered.
@@ -340,12 +318,12 @@ public class War{
 		do {
 			try {
 				System.out.print("\nDo you want to quit? (0 for yes or 1 for no)");
-				enteredString = myScanner.next();  //Read into a string
-				enteredNumber = Integer.parseInt(enteredString.trim());  //then cast as a integer
-				numberError = false;  //if we haven't bailed out, then the number must be valid.
+				enteredString = myScanner.next();
+				enteredNumber = Integer.parseInt(enteredString.trim());
+				numberError = false;
 			} catch(Exception e) {
 				System.out.println("Invalid response. Answer 0 for yes or 1 for no.");
-				numberError = true;  //Uh-Oh...We have a problem.
+				numberError = true;
 			}
 
 		} while (numberError == true );  //Keep asking the user until the correct number is entered.
