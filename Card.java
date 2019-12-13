@@ -1,9 +1,4 @@
 
-/** ADD A COMPARISON CLASS TO COMPARE CARDS <- moved to Deck class
-* ADD A LIST OF THE RANKS OF VALUES USING A MAP?? - 
-* potentially easier than the try catch but maybe not necessary??
-* ADD A TOSTRING METHOD TO PRINT CARD - maybe not bc all strings, use get methods
-*/
 import java.util.*;
 import java.util.Map;
 
@@ -26,7 +21,6 @@ public class Card{
 		color = c;
 		try{ rank = Integer.parseInt(val);}
 		catch(Exception e) {
-			//Set A to 14? since it beats all other cards
 			if((val.toUpperCase()).equals("A"))
 				rank = 14;
 			else if((val.toUpperCase()).equals("J"))
