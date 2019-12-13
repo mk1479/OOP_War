@@ -9,3 +9,5 @@ In order to play our game, the players will have to do the following:
 1) Ensure that "/Users/henryschmeding/Desktop/deck.csv" is a working filepath. "deck.csv" is included on the Github repository. Ensure that the file is on the user "henryschmeding"'s desktop.
 2) Run the "War.java" class. 
 3) Follow the console instructions.
+
+NOTE: Due to the nature of the card game "War", it is possible that a game will seem to go on indefinitely. The program will prompt the user each round if the user would like to quit to avoid a long game. 
